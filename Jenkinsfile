@@ -17,7 +17,7 @@ pipeline {
         
         stage('Install Dependencies') {
             steps {
-                bat 'npm install express'
+                bat 'npm install'
             }
         }
         
