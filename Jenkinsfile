@@ -1,12 +1,9 @@
 pipeline {
     agent any
-    
+     tools {nodejs "node"}
     // environment {
-    //     NODE_HOME = tool name: 'NodeJS_16' // Ensure Node.js is installed in Jenkins under Global Tool Configuration
-    //     PATH = "${NODE_HOME}/bin:${env.PATH}"
-    //     DEPLOY_SERVER = 'your-remote-server-ip'  // Replace with your server IP
-    //     DEPLOY_USER = 'your-ssh-username'       // SSH user for your server
-    //     DEPLOY_PATH = '/var/www/your-app'       // Path where the app will be deployed on the server
+    //     NODE_HOME = tool name: 'NodeJS_16'  // This should match the name in Global Tool Configuration
+    //     PATH = "${NODE_HOME}/bin:${env.PATH}"  // Automatically adds Node.js to the PATH
     // }
     
     stages {
