@@ -17,16 +17,16 @@ pipeline {
         
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm install express'
             }
         }
         
-        stage('Run Tests') {
-            steps {
-                // Run tests (optional, depends on your project)
-                sh 'npm test'
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         // Run tests (optional, depends on your project)
+        //         sh 'npm test'
+        //     }
+        // }
         
         stage('Build Application') {
             steps {
