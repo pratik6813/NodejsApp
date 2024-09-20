@@ -17,7 +17,7 @@ pipeline {
         
         stage('Install Dependencies') {
             steps {
-                sh 'npm install express'
+                bat 'npm install express'
             }
         }
         
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 // If there's a build process (e.g., transpiling, bundling), add it here
                 // For Node.js, if you're using a build tool like Webpack or Babel:
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
         
