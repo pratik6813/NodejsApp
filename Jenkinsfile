@@ -1,6 +1,6 @@
 pipeline {
     agent any
-     tools {nodejs "node"}
+     tools {nodejs "Nodejs"}
     // environment {
     //     NODE_HOME = tool name: 'NodeJS_16'  // This should match the name in Global Tool Configuration
     //     PATH = "${NODE_HOME}/bin:${env.PATH}"  // Automatically adds Node.js to the PATH
