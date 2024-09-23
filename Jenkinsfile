@@ -18,7 +18,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
-                bat 'npm i webpack'
+                bat 'npx webpack'
             }
         }
         
