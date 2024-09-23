@@ -1,0 +1,33 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's not 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify the Node.js version you want
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Docker image
+        run: |
+          docker build -t pratik6813/nodeapp:latest .
+
+      - name: Log in to Docker Hub
+        run: echo "Pratik@6813" | docker login -u "pratik6813" --password-stdin
+
+      - name: Push Docker image
+        run: |
+          docker push pratik6813/nodeapp:latest
