@@ -1,11 +1,7 @@
 pipeline {
     agent any
-     tools {nodejs "Nodejs"}
-    // environment {
-    //     NODE_HOME = tool name: 'NodeJS_16'  // This should match the name in Global Tool Configuration
-    //     PATH = "${NODE_HOME}/bin:${env.PATH}"  // Automatically adds Node.js to the PATH
-    // }
-    
+    tools {nodejs "Nodejs"}
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -17,10 +13,23 @@ pipeline {
         
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
-                bat 'npx webpack'
+                dir('app') {
+                    // Run npm install and webpack commands
+                    sh 'npm install'
+                    sh 'npx webpack'
+                }
             }
         }
+
+        // stage('Build') {
+        //     steps {
+        //         // Change to the app directory
+        //         dir('app') {
+        //             // Run npm install and webpack commands
+        //             sh 'npm install'
+        //             sh 'npx webpack'
+        //         }
+        //     }
         
         // stage('Run Tests') {
         //     steps {
